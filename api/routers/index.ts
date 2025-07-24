@@ -1,9 +1,9 @@
 import { Hono } from "hono";
-import { supabase } from "../db/index";
-import { createStructuredOutput } from "../utils/ai";
-import provincesRouter from "./province";
-import educationStatisticsRouter from "./education-statistics";
-import socialAdjustmentsRouter from "./social-adjustments";
+import { supabase } from "../db/index.js";
+import { createStructuredOutput } from "../utils/ai.js";
+import provincesRouter from "./province.js";
+import educationStatisticsRouter from "./education-statistics.js";
+import socialAdjustmentsRouter from "./social-adjustments.js";
 
 const router = new Hono();
 
