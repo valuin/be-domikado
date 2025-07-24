@@ -1,6 +1,9 @@
 import { Hono } from "hono";
-import { supabase } from "../db/index.js";
-import { createStructuredOutput } from "../utils/ai.js";
+import { supabase } from "../db/index";
+import { createStructuredOutput } from "../utils/ai";
+import provincesRouter from "./province";
+import educationStatisticsRouter from "./education-statistics";
+import socialAdjustmentsRouter from "./social-adjustments";
 
 const router = new Hono();
 
@@ -47,5 +50,9 @@ router.post("/ai/structured", async (c) => {
     return c.json({ error: "Failed to process text" }, 500);
   }
 });
+
+router.route("/provinces", provincesRouter);
+router.route("/education-statistics", educationStatisticsRouter);
+router.route("/social-adjustments", socialAdjustmentsRouter);
 
 export default router;
