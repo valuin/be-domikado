@@ -3,7 +3,6 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
-    "verbatimModuleSyntax": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

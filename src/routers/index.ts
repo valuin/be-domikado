@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { supabase } from "../db/index.js";
+import { supabase } from "../db/index";
 import { createStructuredOutput } from "../utils/ai";
 import provincesRouter from "./province";
 import educationStatisticsRouter from "./education-statistics";

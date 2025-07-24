@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { supabase } from "../db/index.js";
+import { supabase } from "../db/index";
 
 const socialAdjustmentsRouter = new Hono();
 
