@@ -2,10 +2,10 @@ import "dotenv/config";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { supabase } from "./db/index.js";
+import router from "./routers/index.js";
 import { handle } from 'hono/vercel'
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath('')
 
 app.use(logger());
 app.use("/*", cors({
@@ -13,28 +13,7 @@ app.use("/*", cors({
   allowMethods: ["GET", "POST", "OPTIONS"],
 }));
 
-app.get("/", (c) => {
-  return c.text("OK");
-});
-
-app.get("/test", async (c) => {
-  try {
-    const { data, error } = await supabase
-      .from('test_table')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      console.error("Supabase error:", error);
-      return c.json({ error: error.message }, 500);
-    }
-
-    return c.json({ data });
-  } catch (error) {
-    console.error("Database error:", error);
-    return c.json({ error: "Database query failed" }, 500);
-  }
-});
+app.route("/", router);
 
 import { serve } from "@hono/node-server";
 
