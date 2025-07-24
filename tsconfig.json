@@ -15,5 +15,9 @@
     "composite": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
   }
 }

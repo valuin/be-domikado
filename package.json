@@ -1,6 +1,7 @@
 {
   "name": "server",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "build": "tsdown",
     "check-types": "tsc -b",
@@ -29,11 +30,12 @@
     "supabase"
   ],
   "devDependencies": {
-    "tsdown": "^0.12.9",
-    "typescript": "^5.8.2",
-    "tsx": "^4.19.2",
     "@types/node": "^22.13.11",
+    "@types/pg": "^8.11.11",
     "drizzle-kit": "^0.31.2",
-    "@types/pg": "^8.11.11"
+    "tsc-alias": "1.8.16",
+    "tsdown": "^0.12.9",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.2"
   }
 }
