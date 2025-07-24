@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { supabase } from "../db/index";
-import { createStructuredOutput } from "../utils/ai";
+import { supabase } from "../db/index.js";
+import { createStructuredOutput } from "../utils/ai.js";
 
 const educationStatisticsRouter = new Hono();
 
