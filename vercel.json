@@ -4,6 +4,7 @@
     {
       "src": "src/index.ts",
       "use": "@vercel/node",
+      "buildCommand": "bun compile && bun appendJsExtensions.js",
       "config": { "includeFiles": ["dist/**"] }
     }
   ],
